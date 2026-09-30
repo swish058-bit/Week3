@@ -63,4 +63,35 @@ public class CircularLinkedListTest {
         assertTrue(list.remove(4));
         assertEquals("2", list.showList());
     }
+    @Test
+    public void testRemoveNotFound() {
+        CircularLinkedList list = new CircularLinkedList();
+        list.addItem(2);
+
+        assertFalse(list.remove(99));
+        assertEquals("2", list.showList());
+    }
+    @Test
+    public void testEmptyListBehavior() {
+        CircularLinkedList list = new CircularLinkedList();
+
+        assertEquals("", list.showList());
+        assertEquals("", list.showReverseList());
+        assertFalse(list.find(10));
+        assertFalse(list.remove(10));
+    }
+    @Test
+    public void testLongSequence() {
+        CircularLinkedList list = new CircularLinkedList();
+
+        for (int i = 1; i <= 10; i++) {
+            list.addItem(i);
+        }
+
+        assertTrue(list.find(7));
+        assertTrue(list.remove(7));
+        assertFalse(list.find(7));
+        assertEquals("1 2 3 4 5 6 8 9 10", list.showList());
+    }
+
 }
