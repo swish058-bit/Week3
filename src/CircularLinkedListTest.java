@@ -11,4 +11,13 @@ public class CircularLinkedListTest {
 
         assertEquals("2 4 1", list.showList());
     }
+    @Test
+    public void testShowReverseList() {
+        CircularLinkedList list = new CircularLinkedList();
+        list.addItem(2);
+        list.addItem(4);
+        list.addItem(1);
+
+        assertEquals("1 4 2", list.showReverseList());
+    }
 }
