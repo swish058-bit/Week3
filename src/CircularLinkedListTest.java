@@ -45,4 +45,22 @@ public class CircularLinkedListTest {
         assertTrue(list.remove(4));
         assertEquals("2 1", list.showList());
     }
+    @Test
+    public void testRemoveFirst() {
+        CircularLinkedList list = new CircularLinkedList();
+        list.addItem(2);
+        list.addItem(4);
+
+        assertTrue(list.remove(2));
+        assertEquals("4", list.showList());
+    }
+    @Test
+    public void testRemoveLast() {
+        CircularLinkedList list = new CircularLinkedList();
+        list.addItem(2);
+        list.addItem(4);
+
+        assertTrue(list.remove(4));
+        assertEquals("2", list.showList());
+    }
 }
