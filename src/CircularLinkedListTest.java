@@ -35,4 +35,14 @@ public class CircularLinkedListTest {
 
         assertFalse(list.find(99));
     }
+    @Test
+    public void testRemoveMiddle() {
+        CircularLinkedList list = new CircularLinkedList();
+        list.addItem(2);
+        list.addItem(4);
+        list.addItem(1);
+
+        assertTrue(list.remove(4));
+        assertEquals("2 1", list.showList());
+    }
 }
