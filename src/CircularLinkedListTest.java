@@ -20,4 +20,19 @@ public class CircularLinkedListTest {
 
         assertEquals("1 4 2", list.showReverseList());
     }
+    @Test
+    public void testFindExists() {
+        CircularLinkedList list = new CircularLinkedList();
+        list.addItem(10);
+        list.addItem(20);
+
+        assertTrue(list.find(20));
+    }
+    @Test
+    public void testFindNotExists() {
+        CircularLinkedList list = new CircularLinkedList();
+        list.addItem(10);
+
+        assertFalse(list.find(99));
+    }
 }
