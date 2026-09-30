@@ -18,3 +18,25 @@ public class CircularLinkedList {
         newNode.next = dummy;
         dummy.prev = newNode;
     }
+
+    public String showList() {
+        StringBuilder sb = new StringBuilder();
+        DLNode curr = dummy.next;
+
+        while (curr != dummy) {
+            sb.append(curr.value).append(" ");
+            curr = curr.next;
+        }
+
+        return sb.toString().trim();
+    }
+    public String showReverseList() {
+        StringBuilder sb = new StringBuilder();
+        showReverseHelper(dummy.prev, sb);
+        return sb.toString().trim();
+    }
+    private void showReverseHelper(DLNode node, StringBuilder sb) {
+        if (node == dummy) return;
+        sb.append(node.value).append(" ");
+        showReverseHelper(node.prev, sb);
+    }
